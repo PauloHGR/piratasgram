@@ -7,8 +7,8 @@
 
 const Sequelize = require('sequelize');
 
-const connection = new Sequelize('dbsgram', 'phgr', 'admin123', {
-    host:'dbsgram-instance-1.cdvrodzdwd8q.us-east-1.rds.amazonaws.com',
+const connection = new Sequelize('BD', 'Usuario', 'senha', {
+    host:'HOST',
     dialect:'mysql',
     ssl: true
 });

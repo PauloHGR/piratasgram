@@ -4,8 +4,8 @@ const multerS3 = require('multer-s3');
 const crypto = require('crypto');
 
 aws.config.update({
-    accessKeyId: 'AKIA3643YDHW4MUEWY4C',
-    secretAccessKey: "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"
+    accessKeyId: '',
+    secretAccessKey: ""
   });
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
 
     storage: multerS3({
         s3: new aws.S3(),
-        bucket:'uploads-piratasgramv2',
+        bucket:'BUCKET_S3',
         contentType: multerS3.AUTO_CONTENT_TYPE, //Para não realizar o download da imagem e sim apenas abrir ela
         acl: 'public-read',
         key: (req, file, cb) => {

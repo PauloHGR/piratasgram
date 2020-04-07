@@ -2,8 +2,8 @@ const User = require('../models/User');
 const aws = require('aws-sdk');
 
 aws.config.update({
-    accessKeyId: 'AKIA3643YDHW4MUEWY4C',
-    secretAccessKey: "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"
+    accessKeyId: '',
+    secretAccessKey: ""
 });
 
 module.exports = async(req, res) => {
@@ -14,7 +14,7 @@ module.exports = async(req, res) => {
 
     const s3 = new aws.S3();
     var params = {
-        Bucket: 'uploads-piratasgramv2',
+        Bucket: 'BUCKET_S3',
         Delete: {
             Objects:[],
             Quiet: false
@@ -22,7 +22,7 @@ module.exports = async(req, res) => {
     };
 
     const paramsDel = {
-        Bucket: 'uploads-piratasgramv2',
+        Bucket: 'BUCKET_S3',
         Prefix: `${us.id}/`
     };
 
@@ -31,13 +31,13 @@ module.exports = async(req, res) => {
     
         data.Contents.forEach(function(content) {
           //params.Delete.Objects.push({Key: content.Key});
-            s3.deleteObject({Bucket: 'uploads-piratasgramv2', Key: content.Key}, function(err, data){
+            s3.deleteObject({Bucket: 'BUCKET_S3', Key: content.Key}, function(err, data){
                 if(err){console.log(err)}
             });
         });
     });
 
-    s3.deleteObject({Bucket: 'uploads-piratasgramv2', Key: us.key}, function(err, data){
+    s3.deleteObject({Bucket: 'BUCKET_S3', Key: us.key}, function(err, data){
         if(err){console.log(err)}
     });
     

@@ -2,8 +2,8 @@ const User = require('../models/User');
 const aws = require('aws-sdk');
 
 aws.config.update({
-    accessKeyId: 'AKIA3643YDHW4MUEWY4C',
-    secretAccessKey: "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"
+    accessKeyId: '',
+    secretAccessKey: ""
 });
 
 module.exports = async(req, res) => {
@@ -15,7 +15,7 @@ module.exports = async(req, res) => {
 
     const s3 = new aws.S3();
     const params = {
-        Bucket: 'uploads-piratasgramv2',
+        Bucket: 'BUCKET_S3',
         Key: us.key
     };
 
