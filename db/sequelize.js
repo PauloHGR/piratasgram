@@ -1,8 +1,5 @@
 /*
-    const mongoose = require('mongoose');
-
-    mongoose.connect('mongodb://phgr:admin123@piratasgram.cluster-cdvrodzdwd8q.us-east-1.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false')
-    module.exports = mongoose;
+    ;
 */
 
 const Sequelize = require('sequelize');
